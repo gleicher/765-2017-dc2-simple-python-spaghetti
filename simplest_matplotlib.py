@@ -14,6 +14,11 @@
 # lasagna plots if the signals are shorter than 200, and does decent downsampling
 # if M>200. (maybe decent - since to really get decent downsampling, I'd need to
 # improve the spline fitter)
+#
+# the fact that these are all done using the subplot tools makes them very inflexible
+# you basically cannot nest them into anything
+# but this is part of the reason I dislike matplotlib
+#
 
 import numpy
 import matplotlib.pyplot as PLT
@@ -48,11 +53,13 @@ def colorfield(data):
     :return:
     """
     plots = PLT.subplots(len(data), sharex=True, sharey=False)
+    oneshow = False
     for i, d in enumerate(data):
         dv = resample(d, 200)
-        plots[1][i].imshow([dv], aspect=5)
+        oneshow = plots[1][i].imshow([dv], aspect=5)
         plots[1][i].yaxis.set_visible(False)
-
+    PLT.colorbar(oneshow,plots)
+    return plots
 
 def spaghetti(data):
     """
@@ -66,7 +73,7 @@ def spaghetti(data):
     for d in data:
         dv = resample(d, 200)
         plots[1].plot(dv)
-
+    return plots
 
 def smallMultiples(data, doresample=True):
     """
@@ -80,4 +87,5 @@ def smallMultiples(data, doresample=True):
     for i, d in enumerate(data):
         dv = resample(d, 200) if doresample else d
         plots[1][i].plot(dv)
+    return plots
 
