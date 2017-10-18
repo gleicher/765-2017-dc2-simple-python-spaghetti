@@ -18,6 +18,8 @@
 # the fact that these are all done using the subplot tools makes them very inflexible
 # you basically cannot nest them into anything
 # but this is part of the reason I dislike matplotlib
+# I can't even figure out how to put the legend in a nice place (although, there is a nice
+# command for making it)
 #
 
 import numpy
@@ -53,12 +55,11 @@ def colorfield(data):
     :return:
     """
     plots = PLT.subplots(len(data), sharex=True, sharey=False)
-    oneshow = False
     for i, d in enumerate(data):
         dv = resample(d, 200)
-        oneshow = plots[1][i].imshow([dv], aspect=5)
+        cf = plots[1][i].imshow([dv], aspect=5)
+        plots[1][i].colorfield = cf
         plots[1][i].yaxis.set_visible(False)
-    PLT.colorbar(oneshow,plots)
     return plots
 
 def spaghetti(data):
