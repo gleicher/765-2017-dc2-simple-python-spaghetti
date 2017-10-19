@@ -46,7 +46,7 @@ def resample(signal, numsamples):
     return numpy.array([u(v) for v in numpy.linspace(0, numsamples, numsamples)])
 
 
-def colorfield(data):
+def colorfield(data, doresample=200):
     """
     create world's simplest colorfield (lasagna plot)
     truly ugly - but it works
@@ -56,13 +56,13 @@ def colorfield(data):
     """
     plots = PLT.subplots(len(data), sharex=True, sharey=False)
     for i, d in enumerate(data):
-        dv = resample(d, 200)
+        dv = resample(d, doresample) if doresample else d
         cf = plots[1][i].imshow([dv], aspect=5)
         plots[1][i].colorfield = cf
         plots[1][i].yaxis.set_visible(False)
     return plots
 
-def spaghetti(data):
+def spaghetti(data, doresample=200):
     """
     simplest spaghetti plot - basically uses matplotlib defaults
 
@@ -72,11 +72,11 @@ def spaghetti(data):
     # note: we need to use subplots to be consistent with the others
     plots = PLT.subplots(1, 1)
     for d in data:
-        dv = resample(d, 200)
+        dv = resample(d, doresample) if doresample else d
         plots[1].plot(dv)
     return plots
 
-def smallMultiples(data, doresample=True):
+def smallMultiples(data, doresample=200):
     """
     simplest small multiples of line graph - uses the matplotlib defaults
 
@@ -86,7 +86,7 @@ def smallMultiples(data, doresample=True):
     """
     plots = PLT.subplots(len(data), sharex=True, sharey=False)
     for i, d in enumerate(data):
-        dv = resample(d, 200) if doresample else d
+        dv = resample(d, doresample) if doresample else d
         plots[1][i].plot(dv)
     return plots
 

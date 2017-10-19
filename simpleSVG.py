@@ -1,6 +1,11 @@
 # simple implementation of spaghetti plot variants based that produce SVG files
 # this is based on the UW graphics group's svgtoys wrapper for the ancient pysvg
 # library
+#
+# this was abandoned
+# you probably don't want to look at it - it requires an internal library, and the results
+# were ugly as well!
+
 import svgtoys.elems as elems
 import svgtoys.pySVGwrap as svg
 import svgtoys.Charts.linegraph as linegraph
