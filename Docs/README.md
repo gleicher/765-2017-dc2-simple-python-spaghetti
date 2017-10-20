@@ -1,6 +1,6 @@
-This is a place to put additional documentation. For now, it is mainly pictures that are used by other files. And an experiment to see how
+This is a place to put additional documentation. For now, it is mainly pictures that are used by other files. 
 
-> Written with [StackEdit](https://stackedit.io/).
+And an experiment to see how I can use [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgyODgzMzUxNF19
+eyJoaXN0b3J5IjpbLTQyOTUxMTczXX0=
 -->
