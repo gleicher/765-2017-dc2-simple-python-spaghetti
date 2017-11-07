@@ -41,9 +41,9 @@ version of python lying around.
 ## D3 (Javascript) version
 
 Florian created a version in Javascript using D3. It's in a different repo:
-[https://github.com/uwgraphics/pastavis](PastaVis Repo).
+[PastaVis Repo](https://github.com/uwgraphics/pastavis).
 A version running on the web is
-[https://pages.cs.wisc.edu/~heimerl/pasta/](on Florian's home page).
+[on Florian's home page](https://pages.cs.wisc.edu/~heimerl/pasta/).
 You can load the sample data into it.
 
 ## SVG version
