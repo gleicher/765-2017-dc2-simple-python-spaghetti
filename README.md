@@ -38,6 +38,14 @@ There is a **SampleData** directory that has CSV files I computed with datagen.
 It's easy enough for you to make them as well - but it requires you to have the right
 version of python lying around.
 
+## D3 (Javascript) version
+
+Florian created a version in Javascript using D3. It's in a different repo:
+[https://github.com/uwgraphics/pastavis](PastaVis Repo).
+A version running on the web is
+[https://pages.cs.wisc.edu/~heimerl/pasta/](on Florian's home page).
+You can load the sample data into it.
+
 ## SVG version
 
 I started writing a version of the basic charts using an SVG library that 
